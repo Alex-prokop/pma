@@ -1,0 +1,57 @@
+@import "../../assets/scss/var";
+
+.dialog-container {
+  max-width: $formWidth;
+  margin: 0 auto;
+  background-color: $colorBgCard;
+  border-radius: $borderRadius;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    background-color: $colorBgHeader;
+    color: $colorWhite;
+    padding: 0.5rem 1rem;
+
+    .cursor-pointer {
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    padding: 1rem;
+
+    .message {
+      width: 100%;
+      color: $colorTextGeneral;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0 0 $borderRadius $borderRadius;
+
+    .confirm-btn,
+    .cancel-btn {
+      background-color: $colorBtn;
+      color: $colorWhite;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+
+      &:hover {
+        background-color: darken($colorBtn, 10%);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-image: linear-gradient(to left, #f1f8fa, #c0d6c2);
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-footer {
+  margin-top: auto;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.board-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #5a67d8;
+  line-height: 1.25;
+  margin: 1.5rem;
+}
+
+.green-color {
+  color: #16312c;
+  width: 30px;
+}
+
+.box-1 {
+  transform: scale(1);
+  box-shadow: 0 0 5px 5px rgba(34, 60, 80, 0.2);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+
+.box-1:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px 7px rgba(34, 60, 80, 0.2);
+  transition: box-shadow 0.5s, transform 0.5s;
+}
+
+ng-component {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+.column-wrapper {
+  overflow-x: auto;
+}
+
+.column {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.column-section {
+  width: 300px;
+  height: 410px;
+}/*# sourceMappingURL=styles.css.map */

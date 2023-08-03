@@ -1,0 +1,45 @@
+<div class="overlay-container">
+  <div mat-dialog-content class="dialog-content">
+    <h3 class="dialog-title">{{ editData.question }}</h3>
+    <div class="form-container" [formGroup]="taskForm">
+      <mat-form-field>
+        <mat-label>{{ "EDIT TITLE" | translate }}</mat-label>
+        <input matInput formControlName="title" required />
+        <mat-error
+          *ngIf="
+            taskForm.controls['title'].invalid &&
+            taskForm.controls['title'].touched
+          "
+        >
+          {{ "VALID TITLE" | translate }}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ "EDIT DESCRIPTION" | translate }}</mat-label>
+        <input matInput formControlName="description" required />
+        <mat-error
+          *ngIf="
+            taskForm.controls['description'].invalid &&
+            taskForm.controls['description'].touched
+          "
+        >
+          {{ "VALID DESCRIPTION" | translate }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div mat-dialog-actions class="dialog-actions">
+    <button
+      mat-button
+      color="primary"
+      class="confirm-button"
+      [mat-dialog-close]="taskForm.value"
+      [disabled]="taskForm.invalid"
+    >
+      {{ "CONFIRM" | translate }}
+    </button>
+    <button mat-button color="primary" mat-dialog-close class="cancel-button">
+      {{ "CANCEL" | translate }}
+    </button>
+  </div>
+</div>

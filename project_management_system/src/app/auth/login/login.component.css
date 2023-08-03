@@ -1,0 +1,77 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.form-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.login-header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.input-group input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.error-message {
+  color: red;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-button {
+  background-color: #d77e48;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-button .spinner {
+  display: inline-block;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-left-color: #fff;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+a {
+  color: #d77e48;
+  text-decoration: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}/*# sourceMappingURL=login.component.css.map */

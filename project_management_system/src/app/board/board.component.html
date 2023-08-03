@@ -1,0 +1,28 @@
+<div class="card">
+  <h4 class="card-header">{{ "CREATE BOARD" | translate }}</h4>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="form-label">{{ "TITLE" | translate }}</label>
+        <input
+          type="text"
+          formControlName="title"
+          class="form-input"
+          [ngClass]="{ 'input-error': submitted && f['title'].errors }"
+        />
+        <div *ngIf="submitted && f['title'].errors" class="error-text">
+          <div *ngIf="f['title'].errors?.['required']">
+            {{ "VALID TITLE" | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button [disabled]="loading" class="submit-button">
+          <span *ngIf="loading" class="loading-spinner"></span>
+          {{ "CREATE" | translate }}
+        </button>
+        <a routerLink="/" class="cancel-link">{{ "CANCEL" | translate }}</a>
+      </div>
+    </form>
+  </div>
+</div>

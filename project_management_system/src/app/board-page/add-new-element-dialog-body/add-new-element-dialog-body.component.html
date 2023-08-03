@@ -1,0 +1,34 @@
+<div class="overlay">
+  <div class="dialog">
+    <div mat-dialog-content>
+      <h3>{{ data.question }}</h3>
+      <div class="form-field-group">
+        <mat-form-field [formGroup]="titleForm">
+          <mat-label>{{ "ADD TITLE" | translate }}</mat-label>
+          <input matInput formControlName="text" required />
+          <mat-error
+            *ngIf="
+              titleForm.controls['text'].invalid &&
+              titleForm.controls['text'].touched
+            "
+          >
+            {{ "VALID TITLE" | translate }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions class="actions">
+      <button
+        mat-button
+        class="confirm-btn"
+        [mat-dialog-close]="titleForm.value.text"
+        [disabled]="titleForm.invalid"
+      >
+        {{ "CONFIRM" | translate }}
+      </button>
+      <button mat-button mat-dialog-close class="cancel-btn">
+        {{ "CANCEL" | translate }}
+      </button>
+    </div>
+  </div>
+</div>
