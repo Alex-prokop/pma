@@ -1,0 +1,70 @@
+@import "../../../assets/scss/_var";
+
+.overlay {
+  position: fixed;
+  background-color: rgba($mainColor, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  background-color: $colorCard;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  [mat-dialog-content] {
+    color: $color-text-general;
+  }
+
+  h3 {
+    color: $color-text-general;
+  }
+
+  .form-field-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+
+    .confirm-btn {
+      background-color: $colorBtn;
+      color: $colorWhite;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: $border-radius;
+
+      &:hover {
+        background-color: darken($colorBtn, 20%);
+      }
+
+      &:disabled {
+        background-color: $colorBtn;
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+
+    .cancel-btn {
+      color: $colorWhite;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: $border-radius;
+      margin-left: 1rem;
+      background-color: lighten($colorBtn, 20%);
+
+      &:hover {
+        background-color: darken(lighten($colorBtn, 20%), 20%);
+      }
+    }
+  }
+}

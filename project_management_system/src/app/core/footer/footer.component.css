@@ -1,0 +1,36 @@
+footer {
+  font-size: 1.2rem;
+  background-color: #16312c;
+  padding: 20px;
+}
+footer .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+}
+footer .github {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-image: url("../../../assets/img/github-svgrepo.svg");
+  width: 160px;
+  height: 45px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+footer .github.img {
+  width: 50px;
+  height: 50px;
+}
+footer .github a {
+  color: white;
+}
+footer .rss {
+  width: 121px;
+  height: 45px;
+  background-image: url("../../../assets/img/rss.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,40 @@
+<div class="form-card">
+  <div class="login-header">
+    <h2>Login</h2>
+  </div>
+  <div class="form-content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label>{{ "LOGIN" | translate }}</label>
+        <input type="text" formControlName="login" />
+        <div *ngIf="submitted && f['login'].errors" class="error-message">
+          <div *ngIf="f['login'].errors?.['required']">
+            {{ "VALID LOGIN" | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>{{ "PASSWORD" | translate }}</label>
+        <input
+          type="password"
+          formControlName="password"
+          autocomplete="current-password"
+        />
+        <div *ngIf="submitted && f['password'].errors" class="error-message">
+          <div *ngIf="f['password'].errors?.['required']">
+            {{ "VALID PASSWORD" | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" [disabled]="loading" class="login-button">
+          <div *ngIf="loading" class="spinner"></div>
+          {{ "LOG IN" | translate }}
+        </button>
+        <a routerLink="../signup">{{ "SIGN UP" | translate }}</a>
+      </div>
+    </form>
+  </div>
+</div>

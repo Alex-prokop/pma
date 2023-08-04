@@ -1,0 +1,128 @@
+.board-heading {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.add-button {
+  background: #d77e48;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-weight: 600;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: box-shadow 0.3s ease;
+}
+.add-button:hover {
+  box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.loading-icon {
+  border-style: solid;
+  border-width: 2px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border-color: white transparent;
+}
+
+.columns-container {
+  display: inline-block;
+  width: 80%;
+  gap: 1rem;
+  margin: 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+}
+.columns-container .column {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  background-color: #f7f5e7;
+  border-radius: 0.375rem;
+}
+.columns-container .column .column-header {
+  display: flex;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.375rem;
+}
+.columns-container .column .column-header .column-title {
+  color: #4b5563;
+  font-weight: bold;
+}
+.columns-container .column .column-header .form-container {
+  display: flex;
+  gap: 0.25rem;
+}
+.columns-container .column .column-header .form-container .button-group {
+  display: flex;
+  gap: 0.25rem;
+}
+.columns-container .column .column-header .form-container .button-group .submit-button,
+.columns-container .column .column-header .form-container .button-group .cancel-button {
+  border: 1px solid #6b7280;
+  background-color: #d1e8fa;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+}
+.columns-container .column .column-header .delete-icon {
+  font-size: 2rem;
+}
+.columns-container .column .column-content {
+  padding: 0.5rem;
+}
+.columns-container .column .column-content .task {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 0.875rem;
+  padding: 1rem;
+  min-width: 50px;
+  min-height: 50px;
+}
+.columns-container .column .column-content .task .task-header {
+  display: flex;
+  align-items: center;
+}
+.columns-container .column .column-content .task .task-header .task-icons {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  padding: 0.5rem;
+}
+.columns-container .column .column-content .task .task-header .task-icons .edit-icon {
+  text-align: center;
+}
+.columns-container .column .column-content .task .task-header .task-icons .delete-icon {
+  color: #dc2626;
+  text-align: center;
+}
+.columns-container .column .column-content .task .task-description {
+  color: #6b7280;
+  margin: 0;
+}
+.columns-container .column .column-content .add-task-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background-color: #e5e7eb;
+  color: black;
+  border-radius: 0.375rem;
+  margin-bottom: 0.25rem;
+}/*# sourceMappingURL=board-edit.component.css.map */

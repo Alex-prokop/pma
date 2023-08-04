@@ -1,0 +1,48 @@
+.dialog-container {
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.dialog-container .header {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #0000ff;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.dialog-container .header .cursor-pointer {
+  cursor: pointer;
+}
+.dialog-container .content {
+  padding: 1rem;
+}
+.dialog-container .content .message {
+  width: 100%;
+  color: #4a5568;
+}
+.dialog-container .actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0 0 5px 5px;
+}
+.dialog-container .actions .confirm-btn,
+.dialog-container .actions .cancel-btn {
+  background-color: #d77e48;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+.dialog-container .actions .confirm-btn:hover,
+.dialog-container .actions .cancel-btn:hover {
+  background-color: #c2632a;
+}
+.dialog-container .actions .confirm-btn:focus,
+.dialog-container .actions .cancel-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}/*# sourceMappingURL=dialog.component.css.map */

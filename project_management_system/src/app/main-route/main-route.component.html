@@ -1,0 +1,21 @@
+<div class="container">
+  <h2 class="board-heading">
+    {{ "HELLO" | translate }}, {{ user?.login }}! {{ "BOARDS" | translate }}
+  </h2>
+  <div class="board-grid">
+    <div
+      *ngFor="let board of boards"
+      routerLink="/boards/edit/{{ board._id }}"
+      class="board-item"
+    >
+      <h2 class="board-title">{{ board.title }}</h2>
+      <button
+        mat-icon-button
+        class="delete-button"
+        (click)="deleteBoard(board._id)"
+      >
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>

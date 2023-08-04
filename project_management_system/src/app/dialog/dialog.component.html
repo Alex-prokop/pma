@@ -1,0 +1,19 @@
+<div class="dialog-container">
+  <div class="header">
+    <mat-icon id="close-icon" class="cursor-pointer" (click)="closeDialog()"
+      >close</mat-icon
+    >
+  </div>
+  <div class="content">
+    <span class="message">{{ data.message }}</span>
+  </div>
+
+  <div class="actions">
+    <button mat-button class="confirm-btn" [mat-dialog-close]="true">
+      {{ "YES" | translate }}
+    </button>
+    <button mat-button class="cancel-btn" [mat-dialog-close]="false">
+      {{ "NO" | translate }}
+    </button>
+  </div>
+</div>

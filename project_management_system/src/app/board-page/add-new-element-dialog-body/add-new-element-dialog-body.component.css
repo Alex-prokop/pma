@@ -1,0 +1,58 @@
+.overlay {
+  position: fixed;
+  background-color: rgba(22, 49, 44, 0.5);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog {
+  background-color: #3e4c6a;
+  padding: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.dialog [mat-dialog-content] {
+  color: #4a5568;
+}
+.dialog h3 {
+  color: #4a5568;
+}
+.dialog .form-field-group {
+  display: flex;
+  flex-direction: column;
+}
+.dialog .actions {
+  display: flex;
+  justify-content: center;
+}
+.dialog .actions .confirm-btn {
+  background-color: #d77e48;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.dialog .actions .confirm-btn:hover {
+  background-color: #984e21;
+}
+.dialog .actions .confirm-btn:disabled {
+  background-color: #d77e48;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.dialog .actions .cancel-btn {
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-left: 1rem;
+  background-color: #e9b99c;
+}
+.dialog .actions .cancel-btn:hover {
+  background-color: #d77e48;
+}/*# sourceMappingURL=add-new-element-dialog-body.component.css.map */

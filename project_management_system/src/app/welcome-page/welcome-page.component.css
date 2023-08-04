@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #3e4c6a;
+}
+.card mat-card-header mat-card-title {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.card mat-card-content {
+  margin: 0 auto;
+  color: white;
+}/*# sourceMappingURL=welcome-page.component.css.map */

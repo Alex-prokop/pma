@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #16312c;
+  color: white;
+}
+.header .logo-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.header .logo-section img {
+  width: 30px;
+  height: 30px;
+}
+.header .logo-section a {
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+.header .logo-section a:hover {
+  text-decoration: underline;
+}
+.header .right-section {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+}
+.header .right-section .nav-section {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+.header .right-section .nav-section a,
+.header .right-section .nav-section button {
+  color: white;
+  background-color: #d77e48;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.header .right-section .nav-section a:hover,
+.header .right-section .nav-section button:hover {
+  background-color: #c2632a;
+}
+.header .right-section .nav-section button {
+  border: 1px solid white;
+}
+.header .right-section .nav-section .nav-section {
+  /* ... */
+}
+.header .right-section .nav-section .nav-section a:last-child,
+.header .right-section .nav-section .nav-section button:last-child {
+  margin-right: 2rem;
+}
+.header .right-section mat-select {
+  width: 50px;
+  max-width: 100px;
+  font-size: 12px;
+}
+.header .right-section mat-select .mat-select-trigger {
+  background-color: white;
+  color: rgb(214, 33, 33);
+}
+.header .right-section mat-select .mat-option {
+  color: rgb(223, 16, 16);
+}
+.header .right-section mat-select .mat-option:active, .header .right-section mat-select .mat-option.mat-active, .header .right-section mat-select .mat-option.mat-selected, .header .right-section mat-select .mat-option:hover {
+  background-color: rgb(61, 20, 207);
+}/*# sourceMappingURL=header.component.css.map */

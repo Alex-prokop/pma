@@ -1,0 +1,81 @@
+@import "../../../assets/scss/_var.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: $mainColor;
+  color: white;
+  .logo-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .right-section {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    .nav-section {
+      display: flex;
+      gap: 1rem;
+      margin-left: auto;
+      a,
+      button {
+        color: white;
+        background-color: $colorBtn;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover {
+          background-color: darken($colorBtn, 10%);
+        }
+      }
+      button {
+        border: 1px solid white;
+      }
+
+      .nav-section {
+        /* ... */
+
+        a:last-child,
+        button:last-child {
+          margin-right: 2rem;
+        }
+      }
+    }
+    mat-select {
+      width: 50px;
+      max-width: 100px;
+      font-size: 12px;
+      .mat-select-trigger {
+        background-color: white;
+        color: rgb(214, 33, 33);
+      }
+
+      .mat-option {
+        color: rgb(223, 16, 16);
+
+        &:active,
+        &.mat-active,
+        &.mat-selected,
+        &:hover {
+          background-color: rgb(61, 20, 207);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="header">
+  <div class="logo-section">
+    <img src="../../../assets/img/project-logo.png" alt="app-logo" />
+    <a
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >PMA</a
+    >
+  </div>
+
+  <div class="right-section">
+    <nav class="nav-section">
+      <a *ngIf="!user" routerLink="/auth/login" routerLinkActive="active">{{
+        "LOG IN" | translate
+      }}</a>
+      <a *ngIf="!user" routerLink="/auth/signup" routerLinkActive="active">{{
+        "SIGN UP" | translate
+      }}</a>
+      <a
+        *ngIf="user"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >{{ "HOME" | translate }}</a
+      >
+      <a *ngIf="user" routerLink="/boards/add" routerLinkActive="active">{{
+        "CREATE BOARD" | translate
+      }}</a>
+      <a *ngIf="user" routerLink="/profile" routerLinkActive="active">{{
+        "EDIT PROFILE" | translate
+      }}</a>
+      <button *ngIf="user" (click)="logout()">
+        {{ "LOG OUT" | translate }}
+      </button>
+    </nav>
+
+    <mat-select
+      [(value)]="selectedLanguage"
+      (valueChange)="switchLanguage(selectedLanguage)"
+    >
+      <mat-option value="en">Eng</mat-option>
+      <mat-option value="ru">Rus</mat-option>
+    </mat-select>
+  </div>
+</div>

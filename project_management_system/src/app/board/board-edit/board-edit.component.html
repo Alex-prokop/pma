@@ -1,0 +1,91 @@
+<h2 class="board-heading">{{ "SELECTED" | translate }}: {{ boardTitle }}</h2>
+<div class="button-container">
+  <button mat-icon-button [routerLink]="'/main-route'">
+    <mat-icon class="green-color">arrow_back</mat-icon>
+  </button>
+  <app-add-new-element-dialog
+    (emitText)="addColumn($event)"
+    [question]="'ADD NEW COLUMN' | translate"
+  >
+    <button class="add-button">
+      <span class="loading-icon"></span>
+      {{ "ADD COLUMN" | translate }}
+    </button>
+  </app-add-new-element-dialog>
+</div>
+<div class="columns-container">
+  <div *ngFor="let column of columns" class="column">
+    <div class="column-header">
+      <div
+        class="column-title"
+        [id]="column._id"
+        *ngIf="column._id !== selectedColId"
+        (click)="changeEditing($event)"
+      >
+        {{ column.title | titlecase }}
+      </div>
+      <div *ngIf="column._id == selectedColId" class="form-container">
+        <mat-form-field appearance="fill">
+          <input matInput [(ngModel)]="column.title" />
+        </mat-form-field>
+        <div class="button-group">
+          <button
+            class="submit-button"
+            (click)="editColumn(boardId, column._id, column.title)"
+          >
+            Submit
+          </button>
+          <button class="cancel-button" (click)="cancelColumnEdit()">
+            Cancel
+          </button>
+        </div>
+      </div>
+      <mat-icon class="delete-icon" (click)="deleteColumn(boardId, column._id)"
+        >delete</mat-icon
+      >
+    </div>
+    <app-add-new-element-dialog
+      (emitText)="addTask($event, column._id)"
+      [question]="
+        ('ADD NEW TASK' | translate) + column.title + ('COLUMN' | translate)
+      "
+    >
+      <button class="add-task-button">
+        <mat-icon>library_add</mat-icon>
+      </button>
+    </app-add-new-element-dialog>
+    <div class="column-content">
+      <div *ngFor="let task of column.tasks" class="task">
+        <div class="task-header">
+          <h3 class="m-0">{{ task.title | titlecase }}</h3>
+          <div class="task-icons">
+            <app-edit-task-body
+              (emitText)="
+                editTask(
+                  boardId,
+                  column._id,
+                  task._id,
+                  $event.title,
+                  $event.description
+                )
+              "
+              [question]="'EDIT TASK' | translate"
+              [title]="task.title"
+              [description]="task.description"
+              [id]="task._id"
+            >
+              <mat-icon class="edit-icon">edit</mat-icon>
+            </app-edit-task-body>
+            <mat-icon
+              color="warn"
+              class="delete-icon"
+              (click)="deleteTask(boardId, column._id, task._id)"
+              >delete</mat-icon
+            >
+          </div>
+        </div>
+        <p class="task-description">{{ task.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

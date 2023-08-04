@@ -1,0 +1,64 @@
+<div class="signup-form">
+  <h4 class="signup-form__header">{{ "SIGN UP" | translate }}</h4>
+  <div class="signup-form__body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="input-field">
+        <label class="input-field__label">{{ "NAME" | translate }}</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="input-field__input"
+          [ngClass]="{ 'input-error': submitted && f['name'].errors }"
+        />
+        <div *ngIf="submitted && f['name'].errors" class="error-text">
+          <div *ngIf="f['name'].errors?.['required']">
+            {{ "VALID NAME" | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="input-field">
+        <label class="input-field__label">{{ "LOGIN" | translate }}</label>
+        <input
+          type="text"
+          formControlName="login"
+          autocomplete="username"
+          class="input-field__input"
+          [ngClass]="{ 'input-error': submitted && f['login'].errors }"
+        />
+
+        <div *ngIf="submitted && f['login'].errors" class="error-text">
+          <div *ngIf="f['login'].errors?.['required']">
+            {{ "VALID LOGIN" | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="input-field">
+        <label class="input-field__label">{{ "PASSWORD" | translate }}</label>
+        <input
+          type="password"
+          formControlName="password"
+          class="input-field__input"
+          autocomplete="current-password"
+          [ngClass]="{ 'input-error': submitted && f['password'].errors }"
+        />
+        <div *ngIf="submitted && f['password'].errors" class="error-text">
+          <div *ngIf="f['password'].errors?.['required']">
+            {{ "VALID PASSWORD" | translate }}
+          </div>
+          <div *ngIf="f['password'].errors?.['minlength']">
+            {{ "VALID PASSWORD LENGTH" | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button [disabled]="loading" class="actions__submit-button">
+          <span *ngIf="loading" class="actions__loading-spinner"></span>
+          {{ "SIGN UP" | translate }}
+        </button>
+        <a routerLink="/welcome-page" class="actions__cancel-link">{{
+          "CANCEL" | translate
+        }}</a>
+      </div>
+    </form>
+  </div>
+</div>

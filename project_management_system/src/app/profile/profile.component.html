@@ -1,0 +1,72 @@
+<div class="profile-form">
+  <div class="container">
+    <h1 class="header">{{ "EDIT PROFILE" | translate }}</h1>
+    <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="flex-col">
+        <div class="input-group">
+          <label class="input-label">{{ "NAME" | translate }}</label>
+          <input
+            type="text"
+            formControlName="name"
+            class="input-field"
+            [ngClass]="{ 'invalid-input': submitted && f['name'].errors }"
+          />
+          <div *ngIf="submitted && f['name'].errors" class="error-msg">
+            <div *ngIf="f['name'].errors?.['required']">
+              {{ "VALID NAME" | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">{{ "LOGIN" | translate }}</label>
+          <input
+            type="text"
+            formControlName="login"
+            class="input-field"
+            [ngClass]="{ 'invalid-input': submitted && f['login'].errors }"
+          />
+          <div *ngIf="submitted && f['login'].errors" class="error-msg">
+            <div *ngIf="f['login'].errors?.['required']">
+              {{ "VALID LOGIN" | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">
+            {{ "PASSWORD" | translate }}
+          </label>
+          <input
+            type="password"
+            formControlName="password"
+            class="input-field"
+            [ngClass]="{ 'invalid-input': submitted && f['password'].errors }"
+          />
+          <div *ngIf="submitted && f['password'].errors" class="error-msg">
+            <div *ngIf="f['password'].errors?.['required']">
+              {{ "VALID PASSWORD" | translate }}
+            </div>
+            <div *ngIf="f['password'].errors?.['minlength']">
+              {{ "VALID PASSWORD LENGTH" | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button [disabled]="submitting" class="submit-btn">
+          <span *ngIf="submitting" class="spinner"></span>
+          {{ "SAVE" | translate }}
+        </button>
+        <a routerLink="/" class="cancel-link">{{ "CANCEL" | translate }}</a>
+      </div>
+    </form>
+    <div class="delete-btn-wrap">
+      <button (click)="deleteUser()" class="delete-btn">
+        <span class="spinner"></span>
+        {{ "DELETE PROFILE" | translate }}
+      </button>
+    </div>
+    <div *ngIf="loading" class="loading">
+      <span class="spinner"></span>
+    </div>
+  </div>
+</div>

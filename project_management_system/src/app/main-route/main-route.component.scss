@@ -1,0 +1,49 @@
+@import "../../assets/scss/var";
+
+.container {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.board-grid {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem;
+}
+
+.board-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  background: $colorcard;
+  box-shadow: 0 10px 15px -3px rgba($mainColor, 0.1),
+    0 4px 6px -2px rgba($mainColor, 0.05);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgba($mainColor, 0.1),
+      0 10px 10px -5px rgba($mainColor, 0.04);
+  }
+}
+
+.board-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $colorWhite;
+}
+
+.delete-button {
+  color: $color-text-general;
+  outline: none;
+
+  &:hover {
+    color: $color-border-input-error;
+  }
+}
+
+.delete-icon {
+  font-size: 2rem;
+}
